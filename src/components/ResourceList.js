@@ -12,7 +12,15 @@ const ResourceList = ({ resource }) => {
     fetchResource(resource)
   }, [resource])
   /* eslint react/prop-types: 0 */
-  return <div>{resources.length}</div>;
+  return (
+    <ul>
+      {resources.map(record => (
+        <li key={record.id}>
+          {record.title}
+        </li>
+      ))}
+    </ul>
+  )
 }
 
 export default ResourceList;
